@@ -1,0 +1,21 @@
+{{page-title "Edit"}}
+
+<div align="center">
+  {{#if this.model}}
+    <h3>Edit details</h3>
+    <label for="amount">Enter amount (+10 = income & -10 = expense)</label>
+    <Input id="amount" @type="number" @value={{this.model.amount}}/><br><br>
+
+    <label for="description">Description</label>
+    <Input id="description" @type="text" @value={{this.model.description}}/><br><br>
+
+    <label for="date">Date </label>
+    <Input id="date" @type="date" @value={{this.model.dateAdded}}/><br><br>
+
+    <button class="btn" type="button" {{action "edit" this.model.id}} >Save</button>
+  {{else}}
+    <p>Requested Transaction was not found</p>
+    <LinkTo @route="index">Go to Home</LinkTo>
+  {{/if}}
+</div>
+

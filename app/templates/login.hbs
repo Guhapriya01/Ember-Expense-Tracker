@@ -1,0 +1,12 @@
+{{page-title "Login"}}
+
+<div align="center">
+    <label for="name">Username : </label>
+    <Input id="name" @type="text" />
+
+    <label for="pwd">Password : </label>
+    <Input id="pwd" @type="password"/>
+
+    <br/>
+    <button class="btn" type="button" {{action "login"}}>Login</button>
+</div>

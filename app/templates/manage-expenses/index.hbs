@@ -1,0 +1,22 @@
+<div align="center">
+  <h4>Balance : Rs. {{total this.model.transactions}}</h4>
+  <p>Income : Rs. {{income this.model.transactions}}</p>
+  <p>Expense : Rs. {{expense this.model.transactions}}</p>
+
+  Sort By :
+  <LinkTo @route="manage-expenses" @query={{hash sort='asc'}}>Asc</LinkTo>
+  <LinkTo @route="manage-expenses" @query={{hash sort='desc'}}>Desc</LinkTo>
+
+  {{#each this.sortedTransactions as |trans|}}
+    <div class="transaction-view">
+      <p>Amount : {{trans.amount}} </p>
+      <p>Description : {{trans.description}}</p>
+      <p>Date : {{trans.dateAdded}}</p>
+      <button  type="button" {{action "delete" trans.id}}>Delete</button>
+      <LinkTo @route="manage-expenses.edit" @model={{trans.id}}>Edit</LinkTo>
+    </div>
+  {{else}}
+    <p>No transactions here !</p>
+    <LinkTo @route="expense">Add One Here</LinkTo>
+  {{/each}}
+</div>

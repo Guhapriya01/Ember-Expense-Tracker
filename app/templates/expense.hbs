@@ -1,0 +1,16 @@
+{{page-title "Expense"}}
+
+<div align="center">
+  <div class="box-view">
+    <label for="amount">Enter amount (+10 = income & -10 = expense) : </label>
+    <Input id="amount" @value={{this.amount}} @type="number" {{on "change" (action "enteredData")}}/><br><br>
+
+    <label for="description">Description : </label>
+    <Input id="description" @value={{this.description}} @type="text" {{on "change" (action "enteredData")}} /><br><br>
+
+    <label for="date">Date  : </label>
+    <Input id="date"  @value={{this.date}} @type="date" {{on "change" (action "enteredData")}}/><br><br>
+
+    <button class="btn" type="button" {{action "add"}} >Add</button>
+  </div>
+</div>
