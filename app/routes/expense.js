@@ -5,10 +5,10 @@ import { inject as service } from '@ember/service';
 export default AuthenticatedRoute.extend({
   transaction: service(),
 
-  beforeModel() {
-    this._super();
-    console.log('not-Authenticated');
-  },
+  // beforeModel() {
+  //   this._super();
+  //   console.log('not-Authenticated');
+  // },
 
   actions: {
     willTransition(transition) {

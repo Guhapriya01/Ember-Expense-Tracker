@@ -2,10 +2,11 @@ import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 
 export default Controller.extend({
-  queryParams: ['sort'],
+  queryParams: [{typeOfTrans:'type'},'sort'],
   sort: null,
+  typeOfTrans:null,
 
-  sortedTransactions: computed('sort', 'model', function () {
+  sortedTransactions: computed('sort', 'model.transactions.@each.{amount,description,dateAdded}', function () {
     let s = this.sort;
 
     if (s) {

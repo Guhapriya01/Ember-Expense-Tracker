@@ -26,7 +26,6 @@ export default class ManageExpensesEditController extends Controller {
 
     this.transaction.updateTransaction(transObj);
     alert('Edited');
-    // let q = this.controllerFor('manage-expenses.index').sort;
     this.router.transitionTo('manage-expenses');
   }
 }

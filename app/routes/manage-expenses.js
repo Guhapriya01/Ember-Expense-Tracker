@@ -13,6 +13,7 @@ export default AuthenticatedRoute.extend({
   },
 
   model() {
+    console.log('manage expense model');
     return {
       transactions: this.transaction.transactions,
     };
